@@ -1,0 +1,19 @@
+
+/***************************************************
+	TIMELINE
+ ***************************************************/
+
+/* The line */
+.cbp_tmtimeline:before { background: #8c9899; }
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime span:last-child { color: #7f8c8d; }
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child { color: #3D6D99; }
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel { background: #7f8c8d; color: #fff; }
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel { background: #3D6D99; }
+
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after { border-right-color: #7f8c8d; }
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after { border-right-color: 3D6D99; }
+/* The icons */
+.cbp_tmtimeline > li .cbp_tmicon { color: #fff; background: #3D6D99; box-shadow: 0 0 0 8px 	#8c9899 ;}
