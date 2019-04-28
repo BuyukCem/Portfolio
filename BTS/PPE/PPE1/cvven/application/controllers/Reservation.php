@@ -12,6 +12,7 @@
          $this->form_validation->set_rules('datearrivee', 'datearrivee','required');
          $this->form_validation->set_rules('datedepart', 'datedepart','required');
          $this->form_validation->set_rules('nbpersonne', 'nbpersonne','required');
+         $this->form_validation->set_rules('logement', 'logement','required');
          $this->form_validation->set_rules('menage', 'menage','required');
          $this->form_validation->set_rules('restauration', 'restauration','required');
          $this->form_validation->set_rules('activites', 'activites','required');
@@ -22,7 +23,6 @@
              $this->load->view('templates/footer');
          }else{
             $this->Reservation_model->set_Reservation();
-            $this->load->view('templates/header');
             $this->load->view('pages/'.$page);
             $this->load->view('pages/alertSuccess');
             $this->load->view('templates/footer');
