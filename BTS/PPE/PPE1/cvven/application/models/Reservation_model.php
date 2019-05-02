@@ -1,12 +1,15 @@
 <?php
+
 class Reservation_model extends CI_Model {
       public function __construct(){
               parent::__construct();
                $this->load->database();
 
        }
+       
        /**
-        * Add reservation
+        * set_Reservation  insert a reservation in BDD
+        *
         * @return void
         */
        public function set_Reservation(){
@@ -28,10 +31,12 @@ class Reservation_model extends CI_Model {
          $this->db->insert('reservation', $data);
   
       }
-         /**
-          * get list of user reservations
-          * @return array $row list of reservation
-          */
+        
+        /**
+         * chargementListeReservation 
+         *
+         * @return array List of reservation
+         */
         public function chargementListeReservation(){
             $query=$this->db->get_where('reservation');//get 
             if($query->num_rows()>0){// test 
@@ -39,11 +44,11 @@ class Reservation_model extends CI_Model {
               return $row;
             }// sinon faut retourner un message d'errreur !!!pas sur à 100%
         }
+       
         /**
-         *  Get list of user in progress
+         * chargementListeReservation_with_id see the list of reservations for the session
          *
-         * @param int $id
-         * @return array
+         * @return array List of reservation $this->session->userdata('numadh');
          */
         public function chargementListeReservation_with_id(){
           $id=$this->session->userdata('numadh');
@@ -54,17 +59,23 @@ class Reservation_model extends CI_Model {
              return $row;
            }
         }
+        
         /**
-         * Validation of reservation
-         * @param int $id_Reserv
+         * ValiderReservation
+         *
+         * @param  int $id_Reserv 
+         *
          * @return void
          */
         public function ValiderReservation($id_Reserv){
         
         }
+        
         /**
-         * Refuse of reservation
+         * RefuserReservation
+         *
          * @param int $id_Reserv
+         *
          * @return void
          */
         public function RefuserReservation($id_Reserv){
@@ -76,10 +87,13 @@ class Reservation_model extends CI_Model {
         public function envoiemail(){
           
         }
+        
         /**
-         *  change format date ex: 30/03/2019  to 2019/03/30
-         * @param date $origDate format date
-         * @return date
+         * ChangementFormatData change format date ex: 30/03/2019  to 2019/03/30
+         *
+         * @param  string $origDate
+         *
+         * @return string $newDate
          */
         public function ChangementFormatData($origDate){
           $date = str_replace('/', '-', $origDate );

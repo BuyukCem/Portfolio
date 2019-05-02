@@ -6,7 +6,7 @@
     $user_name = 'makeflo';
     $password = 'test';
     $dbh = new mysqli($host_name, $user_name, $password, $database);
-    / 40 logements : entrée, douche et wc, 2 chambres à 2 lits avec coin toilette et balcon. 
+    // 40 logements : entrée, douche et wc, 2 chambres à 2 lits avec coin toilette et balcon. 
 
     for($i=0;$i<39;$i++){
         $sql='INSERT INTO `hebergement`(aile,etage,numtype) VALUES ("A" ,"1" , 1)';

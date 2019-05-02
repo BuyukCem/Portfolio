@@ -5,11 +5,14 @@ class Admin_model extends CI_Model {
                      $this->load->database();
 
              }
+    
      /**
-      * Requete qui permet d'identifier l'admin
-      * @param $UserLogin string login de l'admin
-      * @param $UserPassword Sting mots de passe de l'admin
-      * @return 
+      * loginadmin Query that identifies the admin
+      *
+      * @param  string $UserLogin
+      * @param  string $UserPassword
+      *
+      * @return void
       */
      public function loginadmin($UserLogin , $UserPassword ){
        $this->db->where('loginadmin', $UserLogin);
@@ -21,7 +24,4 @@ class Admin_model extends CI_Model {
          return false;
        }
      }
-
-
-
 }

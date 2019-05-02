@@ -4,9 +4,10 @@ class Users_model extends CI_Model {
                     parent::__construct();
                      $this->load->database();
 
-        }
+        }     
         /**
-         * Enregristrement de l'utilisateur
+         * enregistrement Save user
+         *
          * @return void
          */
         public function enregistrement(){
@@ -23,10 +24,11 @@ class Users_model extends CI_Model {
 
              $this->db->insert('adherent', $data);
         }
-
        /**
-        * Verification du login 
-        * @param $login String 
+        * check_username_exists this methode check if username exists
+        *
+        * @param  string $login
+        *
         * @return boolean
         */
        public function check_username_exists($login){
@@ -39,8 +41,11 @@ class Users_model extends CI_Model {
         }
       }
       /**
-       * Permet de voir si cette adresse email existe ou pas 
-       * @param $mail String Mail de l'user
+       * check_mail_exists this methode check if email exists
+       *
+       * @param  string $mail
+       *
+       * @return void
        */
       public function check_mail_exists($mail){
        $query=$this->db->get_where('adherent', array('mail' => $mail));
@@ -51,11 +56,13 @@ class Users_model extends CI_Model {
          return false;
        }
      }
-      /**
-      * Requete qui permet d'identifier l'utilisateur 
-      * @param $UserLogin string login de l'user
-      * @param $UserPassword Sting mots de passe de l'user
-      * @return String
+     /**
+      * login Requete qui permet d'identifier l'utilisateur 
+      *
+      * @param  string $UserLogin
+      * @param  string $UserPassword
+      *
+      * @return void
       */
      public function login($UserLogin , $UserPassword){
        $this->db->where('login', $UserLogin);
@@ -68,11 +75,13 @@ class Users_model extends CI_Model {
        }
      }
      /**
-      * Changement du mots de passe de l'utilisateur 
-      * @param $UserLogin String
-      * @param $mdporiginal String
-      * @param $mdpnew String
-      * @return boolean 
+      * changemdp
+      *
+      * @param  string $UserLogin
+      * @param  string $mdporiginal
+      * @param  string $mdpnew
+      *
+      * @return boolean
       */
      public function changemdp( $UserLogin,$mdporiginal,$mdpnew){
        $this->db->where('login', $UserLogin);
@@ -99,9 +108,11 @@ class Users_model extends CI_Model {
 
        }
      }
+
      /**
-      * Recuperation de la liste des clients
-      * @return $row Liste des clients
+      * GetListeClient Recuperation de la liste des clients
+      *
+      * @return array
       */
      public function GetListeClient(){
       $query=$this->db->get('adherent'); 
@@ -111,9 +122,11 @@ class Users_model extends CI_Model {
       }
     }
      /**
-      * Suppression d'un client
-      * @param $idClient Id du lient a supprimer
-      * @return Boolean
+      * DeleteClient
+      *
+      * @param  mixed $idClient Id du lient a supprimer
+      *
+      * @return boolean
       */
      public function DeleteClient($idClient){
         $this->db->where('numadh',$idClient);
@@ -130,11 +143,11 @@ class Users_model extends CI_Model {
           return true;
         }
      }
-
     /**
-     * check if password is correct and hash it
+     * check_password check if password is correct and hash it  Pas encore utilisé
      *
-     * @param string $password
+     * @param  string $password
+     *
      * @return string
      */
     static function check_password(string $password){
@@ -158,7 +171,7 @@ class Users_model extends CI_Model {
   }
 
   /**
-   * check if mail is correct
+   * check_mail check if mail is correct pas encore untilisé
    *
    * @param string $mail
    * @return string
