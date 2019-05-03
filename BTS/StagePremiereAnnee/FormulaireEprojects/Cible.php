@@ -1,10 +1,10 @@
 <?php
 		$errors=[];
 		if (!array_key_exists('nom',$_POST)|| $_POST['nom'=='']) {
-			$errors['nom']="Vous d'avez pas rempli votre nom"
+			$errors['nom']="Vous d'avez pas rempli votre nom";
 		}
 		if (!array_key_exists('prenom',$_POST)|| $_POST['prenom'=='']) {
-			$errors['prenom']="Vous d'avez pas rempli votre prenom"
+			$errors['prenom']="Vous d'avez pas rempli votre prenom";
 		}
 		
 
