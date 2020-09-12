@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Open+Sans&display=swap');
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.library{
+    padding: 13px;
+}
+.grid {
+    padding: 0;
+}
+.grid a {
+    text-decoration: none;
+    color: black;
+}
+.illustration{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #6133B4;
+    transition-property: all;
+    transition-duration: 200ms;
+    width: 100%;
+    height: 8rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.shadow a:hover{
+    color: black;
+    border-radius: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.tag{
+    font-size: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+    line-height: 1rem;
+    align-items: center;
+}
+
+.bg-white{
+    background-color: white;
+}
+.border-gray200{
+    border-color: #edf2f7
+}
+.flex{
+    display: flex;
+}
+.items-center{
+    align-items: center;
+}
+.flex-shrink-0{
+    flex-shrink: 0;
+}
+.w-10{
+    width: 2.5rem;
+}
+.h-10 {
+    height: 2.5rem;
+}
+.intitulePost{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+.text-gray-500 {
+    color: #a0aec0;
+}
+.makeflo{
+    max-width: 175%;
+    height: auto;
+}
+.intitulePost-date{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-color: #edf2f7;
+}
